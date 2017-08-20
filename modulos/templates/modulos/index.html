@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--<h1 align="center">Especies</h1>-->
-<!--{% for especie in especies %}-->
+<!--{% for especie in lista_especies %}-->
 
 <!--<p class="a{{especie.nombre}}">{{especie.nombre}}</p>-->
 <!--{% endfor %}-->
@@ -30,7 +30,7 @@
 <div class="page-content">
   <div class="container">
     <div class="row">
-      {% for especie in especies %}
+      {% for especie in lista_especies %}
       {% if forloop.counter0 < 4 %}
       <div class="col">
         <div class="photo-container"
@@ -44,7 +44,7 @@
       {% endfor %}
     </div>
     <div class="row">
-      {% for especie in especies %}
+      {% for especie in lista_especies %}
       {% if forloop.counter0 > 3  %}
       {% if forloop.counter0 < 10  %}
       <div class="col">
@@ -60,7 +60,7 @@
       {% endfor %}
     </div>
     <div class="row">
-      {% for especie in especies %}
+      {% for especie in lista_especies %}
       {% if forloop.counter0 > 9  %}
       {% if forloop.counter0 < 13  %}
       <div class="col">
@@ -76,7 +76,7 @@
       {% endfor %}
     </div>
     <div class="row">
-      {% for especie in especies %}
+      {% for especie in lista_especies %}
       {% if forloop.counter0 > 12  %}
       {% if forloop.counter0 < 17  %}
       <div class="col">
