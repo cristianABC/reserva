@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--<h1 align="center">Especies</h1>-->
-<!--{% for especie in especies %}-->
+<!--{% for especie in lista_especies %}-->
 
 <!--<p class="a{{especie.nombre}}">{{especie.nombre}}</p>-->
 <!--{% endfor %}-->
@@ -46,7 +46,7 @@
     <div class="row">
       {% for especie in lista_especies %}
       {% if forloop.counter0 > 3  %}
-      {% if forloop.counter0 < 10  %}
+      {% if forloop.counter0 < 9  %}
       <div class="col">
         <div class="photo-container"
              style="background-image:url({{especie.url}})"></div>
@@ -61,8 +61,13 @@
     </div>
     <div class="row">
       {% for especie in lista_especies %}
+<<<<<<< HEAD
       {% if forloop.counter0 > 9  %}
       {% if forloop.counter0 < 13  %}
+=======
+      {% if forloop.counter0 > 8  %}
+      {% if forloop.counter0 < 12  %}
+>>>>>>> b961c6b9a15e2e8e78853f1e5ad9b17e86c55a2c
       <div class="col">
         <div class="photo-container"
              style="background-image:url({{especie.url}})"></div>
@@ -77,8 +82,13 @@
     </div>
     <div class="row">
       {% for especie in lista_especies %}
+<<<<<<< HEAD
       {% if forloop.counter0 > 12  %}
       {% if forloop.counter0 < 17  %}
+=======
+      {% if forloop.counter0 > 11  %}
+      {% if forloop.counter0 < 16  %}
+>>>>>>> b961c6b9a15e2e8e78853f1e5ad9b17e86c55a2c
       <div class="col">
         <div class="photo-container"
              style="background-image:url({{especie.url}})"></div>
