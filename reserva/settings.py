@@ -25,7 +25,7 @@ SECRET_KEY = 'zd*(5aab%*fo)dd=-ezpunt(9%x_py7jmvp49c)a3q7)e@i@^v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['reservanatural.herokuapp.com']
+ALLOWED_HOSTS = ['reservanatural.herokuapp.com', 'localhost']
 
 
 # Application definition
