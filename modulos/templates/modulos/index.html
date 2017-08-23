@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../static/css/style-neat-parallax-hero-effect.css">
   <link rel="stylesheet" href="../../static/css/style-mouse-scroll-animation.css">
   <link rel="stylesheet" href="../../static/css/style-button-animation.css">
+  <link rel="stylesheet" href="../../static/css/style-navbars.css">
   <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
@@ -18,14 +19,14 @@
     <h1 class="title">BIODIVERSIDAD</h1>
     <h3 class="subtitle">Catálogo de Especies</h3>
     <div class="hero-nav__button">
-      <a class="button">
+      <a class="button"  onclick="openNav('loginSideNav')">
         <span class="text">Login</span>
         <span class="line -right"></span>
         <span class="line -top"></span>
         <span class="line -left"></span>
         <span class="line -bottom"></span>
       </a>
-      <a class="button">
+      <a class="button"  onclick="openNav('registroSideNav')">
         <span class="text">Registro</span>
         <span class="line -right"></span>
         <span class="line -top"></span>
@@ -107,8 +108,20 @@
   </div>
 </div>
 
+<div id="loginSideNav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Login</a>
+</div>
+
+<div id="registroSideNav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Registro</a>
+</div>
+
+
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="../../static/js/index-neat-parallax-hero-effect.js"></script>
+<script src="../../static/js/navbars.js"></script>
 <script src="../../static/js/main.js"></script>
 </body>
 
