@@ -9,86 +9,98 @@
   <link rel="stylesheet" href="../../static/css/style-gallery.css">
   <link rel="stylesheet" href="../../static/css/style-neat-parallax-hero-effect.css">
   <link rel="stylesheet" href="../../static/css/style-mouse-scroll-animation.css">
+  <link rel="stylesheet" href="../../static/css/style-button-animation.css">
   <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
 <body>
-<!--<h1 align="center">Especies</h1>-->
-<!--{% for especie in lista_especies %}-->
-
-<!--<p class="a{{especie.nombre}}">{{especie.nombre}}</p>-->
-<!--{% endfor %}-->
 <div class="hero-nav">
   <div class="hero-nav__inner">
     <h1 class="title">BIODIVERSIDAD</h1>
     <h3 class="subtitle">Catálogo de Especies</h3>
     <div class="hero-nav__button">
-      <a href="#" class="btn"></a>
+      <a class="button">
+        <span class="text">Login</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
+      <a class="button">
+        <span class="text">Registro</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
     </div>
-    <div class='icon-scroll'></div>
+    <div class="scroll">
+      <div class='icon-scroll'></div>
+      <div class="icon-scroll-text">Scroll Down</div>
+    </div>
   </div>
 </div>
 <div class="page-content">
   <div class="container">
     <div class="row">
       {% for especie in lista_especies %}
-      {% if forloop.counter0 < 4 %}
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
+        {% if forloop.counter0 < 4 %}
+          <div class="col">
+            <div class="photo-container"
+                 style="background-image:url({{ especie.url }})"></div>
+            <h2>{{ especie.nombre }}</h2>
+            <div class="slide">
+              <p>{{ especie.descripcion }}</p>
+            </div>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
     <div class="row">
       {% for especie in lista_especies %}
-      {% if forloop.counter0 > 3  %}
-      {% if forloop.counter0 < 9  %}
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
-      {% endif %}
+        {% if forloop.counter0 > 3 %}
+          {% if forloop.counter0 < 9 %}
+            <div class="col">
+              <div class="photo-container"
+                   style="background-image:url({{ especie.url }})"></div>
+              <h2>{{ especie.nombre }}</h2>
+              <div class="slide">
+                <p>{{ especie.descripcion }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
     <div class="row">
       {% for especie in lista_especies %}
-      {% if forloop.counter0 > 8  %}
-      {% if forloop.counter0 < 12  %}
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
-      {% endif %}
+        {% if forloop.counter0 > 8 %}
+          {% if forloop.counter0 < 12 %}
+            <div class="col">
+              <div class="photo-container"
+                   style="background-image:url({{ especie.url }})"></div>
+              <h2>{{ especie.nombre }}</h2>
+              <div class="slide">
+                <p>{{ especie.descripcion }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
     <div class="row">
       {% for especie in lista_especies %}
-      {% if forloop.counter0 > 11  %}
-      {% if forloop.counter0 < 16  %}
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
-      {% endif %}
+        {% if forloop.counter0 > 11 %}
+          {% if forloop.counter0 < 16 %}
+            <div class="col">
+              <div class="photo-container"
+                   style="background-image:url({{ especie.url }})"></div>
+              <h2>{{ especie.nombre }}</h2>
+              <div class="slide">
+                <p>{{ especie.descripcion }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
       {% endfor %}
 
     </div>
