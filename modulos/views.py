@@ -53,11 +53,11 @@ def login_view(request):
         user = authenticate(username=username,password=password)
         if user is not None:
             login(request,user)
-            return redirect(reverse('index'))
+            return redirect(reverse('reload'))
         else:
             mensaje='Nombre de usuario o clave invalida'
 
-    return render(request,'modulos/login.html',{'mensaje':mensaje})
+    return render(request, 'modulos/login.html', {'mensaje': mensaje})
 
 
 def logout_view(request):
