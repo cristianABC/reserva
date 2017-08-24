@@ -8,6 +8,7 @@ var heroShinker = function() {
             $(hero).css('height', (heroHeight - scrollOffset));
             $('.hero-nav__inner .subtitle').css('display','block');
             $('.hero-nav__inner .icon-scroll').css('display','block');
+            $('.hero-nav__inner .icon-scroll-text').css('display','block');
             $('.hero-nav__inner .title').css('margin-bottom','0');
             $('.hero-nav__inner .title').css('margin-top','0');
         }
@@ -15,9 +16,16 @@ var heroShinker = function() {
             hero.addClass('fixme');
             $('.hero-nav__inner .subtitle').css('display','none');
             $('.hero-nav__inner .icon-scroll').css('display','none');
+            $('.hero-nav__inner .icon-scroll-text').css('display','none');
             $('.hero-nav__inner .title').css('margin-bottom','0.67em');
             $('.hero-nav__inner .title').css('margin-top','0.67em');
-        } else {
+        }
+        if (scrollOffset > (heroHeight - 300)) {
+            hero.addClass('fixme');
+            $('.hero-nav__inner .icon-scroll').css('display','none');
+            $('.hero-nav__inner .icon-scroll-text').css('display','none');
+        }
+        else {
             hero.removeClass('fixme');
         };
     });
