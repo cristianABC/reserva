@@ -45,14 +45,18 @@
     <div class="row">
       {% for especie in lista_especies %}
         {% if forloop.counter0 < 4 %}
+
+
+
           <div class="col">
             <div class="photo-container"
-                 style="background-image:url({{ especie.url }})"></div>
+                 style="background-image:url({{ especie.url }})" ></div>
             <h2>{{ especie.nombre }}</h2>
             <div class="slide">
               <p>{{ especie.descripcion }}</p>
             </div>
           </div>
+
         {% endif %}
       {% endfor %}
     </div>
