@@ -19,20 +19,30 @@
     <h1 class="title">BIODIVERSIDAD</h1>
     <h3 class="subtitle">Catálogo de Especies</h3>
     <div class="hero-nav__button">
-      <a class="button"  onclick="openNav('loginSideNav')">
-        <span class="text">Login</span>
-        <span class="line -right"></span>
-        <span class="line -top"></span>
-        <span class="line -left"></span>
-        <span class="line -bottom"></span>
-      </a>
-      <a class="button"  onclick="openNav('registroSideNav')">
-        <span class="text">Registro</span>
-        <span class="line -right"></span>
-        <span class="line -top"></span>
-        <span class="line -left"></span>
-        <span class="line -bottom"></span>
-      </a>
+      {% if user.is_authenticated %}
+        <a class="button" href="{% url 'logout' %}">
+          <span class="text">Logout</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      {% else %}
+        <a class="button" onclick="openNav('loginSideNav')">
+          <span class="text">Login</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+        <a class="button" onclick="openNav('registroSideNav')">
+          <span class="text">Registro</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      {% endif %}
     </div>
     <div class="scroll">
       <div class='icon-scroll'></div>
@@ -113,12 +123,15 @@
 </div>
 
 <div id="loginSideNav" class="sidenav">
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <iframe src="./login.html/" frameborder="0"></iframe>
+
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <iframe src="./login/" frameborder="0"></iframe>
+
 </div>
 
 <div id="registroSideNav" class="sidenav">
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <iframe src="./addUser/" frameborder="0"></iframe>
 </div>
 

@@ -1,43 +1,41 @@
-{#Load tag library#}
-{%load bootstrap3%}
-
-{%bootstrap_css%}
-{%bootstrap_javascript%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registrar Usuario</title>
+  <meta charset="UTF-8">
+  <title>Registrar Usuario</title>
+  <link rel="stylesheet" href="../../static/css/style-modals.css">
+  <link rel="stylesheet" href="../../static/css/style-button-animation.css">
 </head>
-<body>
-{%block content%}
-<div class="row">
-    <div class="col-md-4 col-sm-offset-4">
-        <div class="page-header">
-            <h2>Login</h2>
+<body class="modal modal-login">
+{% block content %}
+  <div class="content">
+    <div class="form">
+      <div class="title">
+        <h2>Login</h2>
+      </div>
+      {% if mensaje %}
+        <div class="alert alert-danger">{{ mensaje }}</div>
+      {% endif %}
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label class="control-label" for="username">Nombre Usuario</label>
+          <input type="text" id="username" name="username" class="form-control" value="{{ username }}">
         </div>
-        {%if mensaje%}
-        <div class="alert alert-danger">{{mensaje}}</div>
-        {%endif%}
+        <div class="form-group">
+          <label class="control-label" for="password">Contraseña</label>
+          <input type="password" id="password" name="password" class="form-control">
+        </div>
 
-        <form action="" method="POST">
-            {%csrf_token%}
-            <div class="form-group">
-                <label class="control-label" for="username">Nombre Usuario</label>
-                <input type="text" id="username"name="username" class="form-control" value="{{username}}">
-            </div>
-             <div class="form-group">
-                <label class="control-label" for="password">Contraseña</label>
-                <input type="password" id="password"name="password" class="form-control">
-            </div>
+        <button type="submit" >Login</button>
 
-            <button  type="submit" class="btn btn-primary">Login </button>
-            <a href="{%url 'index'%}">Cancelar</a>
-
-        </form>
+      </form>
+    <button href="javascript:void(0)" onclick="parent.closeNav()">Cancelar</button>
     </div>
-
-</div>
-{%endblock content%}
+  </div>
+{% endblock content %}
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../../static/js/navbars.js"></script>
 </body>
 </html>
