@@ -74,27 +74,6 @@
     </div>
     <div class="row">
       {% for especie in lista_especies %}
-<<<<<<< HEAD
-
-      {% if forloop.counter0 > 9  %}
-      {% if forloop.counter0 < 13  %}
-
-      {% if forloop.counter0 > 8  %}
-      {% if forloop.counter0 < 12  %}
-
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
-      {% endif %}
-      {% endif %}
-      {% endif %}
-=======
         {% if forloop.counter0 > 8 %}
           {% if forloop.counter0 < 12 %}
             <div class="col">
@@ -107,32 +86,10 @@
             </div>
           {% endif %}
         {% endif %}
->>>>>>> refs/remotes/origin/master
       {% endfor %}
     </div>
     <div class="row">
       {% for especie in lista_especies %}
-<<<<<<< HEAD
-
-      {% if forloop.counter0 > 12  %}
-      {% if forloop.counter0 < 17  %}
-
-      {% if forloop.counter0 > 11  %}
-      {% if forloop.counter0 < 16  %}
-
-      <div class="col">
-        <div class="photo-container"
-             style="background-image:url({{especie.url}})"></div>
-        <h2>{{especie.nombre}}</h2>
-        <div class="slide">
-          <p>{{especie.descripcion}}</p>
-        </div>
-      </div>
-      {% endif %}
-      {% endif %}
-      {% endif %}
-      {% endif %}
-=======
         {% if forloop.counter0 > 11 %}
           {% if forloop.counter0 < 16 %}
             <div class="col">
@@ -145,7 +102,6 @@
             </div>
           {% endif %}
         {% endif %}
->>>>>>> refs/remotes/origin/master
       {% endfor %}
 
     </div>
@@ -154,12 +110,12 @@
 
 <div id="loginSideNav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Login</a>
+  <a href="{%url 'login'%}">Login</a>
 </div>
 
 <div id="registroSideNav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Registro</a>
+  <a href="{%url 'addUser'%}">Registro</a>
 </div>
 
 
