@@ -93,6 +93,38 @@ body{
     outline: 0;
 }
 
-.modal .button.submit{
 
+/*Styles detail Modal*/
+.modal-detail{
+    overflow-y: scroll;
+}
+.modal-detail .title, .modal-detail .category, .modal-detail .name, .modal-detail .description{
+    color: #F0F0F0;
+    text-align: left;
+    margin: 0 5px 0 5px;
+}
+.modal-detail .title{
+    font-size: 27px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-detail .image{
+    max-width: 100%;
+}
+
+.modal-detail .name{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-detail .name{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar
+{
+    width: 0;
 }

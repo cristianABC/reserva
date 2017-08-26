@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Detalle</title>
+  <meta charset="UTF-8">
+  <title>Detalle</title>
+  <link rel="stylesheet" href="../../../static/css/style-modals.css">
 </head>
-<body>
-    <p>{{especie.nombre}} </p>
-    <p>{{especie.clasificacionTax}} </p>
-    <p>{{especie.nombreCientifico}} </p>
-    <p>{{especie.categoria}} </p>
-    <img src="{{especie.url}}"/>
-<a href="{%url 'index'%}">Volver</a>
+<body class="modal modal-detail">
+<div class="content">
+  <div class="title">{{ especie.nombre }} </div>
+{#  <div class="category">{{ especie.categoria }} </div>#}
+  <img class="image" src="{{ especie.url }}"/>
+  <div class="name">{{ especie.nombreCientifico }} </div>
+  <div class="description">{{ especie.descripcion }} </div>
+{#  <div class="classification">{{ especie.clasificacionTax }} </div>#}
 
+  {#  <a href="{% url 'index' %}">Volver</a>#}
+</div>
 </body>
 </html>
