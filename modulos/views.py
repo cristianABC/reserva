@@ -70,3 +70,5 @@ def reload(request):
     context ={}
     return render(request, 'modulos/reload.html', context)
 
+def view_detail(request):
+        print(request.data)
