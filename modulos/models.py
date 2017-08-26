@@ -72,3 +72,14 @@ def clean_username(self):
     if password != password2:
         raise forms.ValidationError('Las contraseñas no coincidenNombre de usuario ya existe')
     return password
+
+class EditUserForm(forms.ModelForm):
+    username = forms.CharField(max_length=50)
+    firstname = forms.CharField(max_length=20)
+    lastname = forms.CharField(max_length=20)
+    email = forms.EmailField()
+    password = forms.CharField(widget= forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ['username', 'firstname', 'lastname', 'email', 'password']

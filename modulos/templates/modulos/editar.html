@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar</title>
+  <link rel="stylesheet" href="../../static/css/style-modals.css">
+  <link rel="stylesheet" href="../../static/css/style-button-animation.css">
+</head>
+<body class="modal modal-editar">
+{% block content %}
+  <div class="content">
+    <div class="form">
+      <div class="title">
+        <h2>Editar usuario</h2>
+      </div>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit" >Guardar</button>
+
+      </form>
+      <button href="javascript:void(0)" onclick="parent.closeNav()">Cancelar</button>
+    </div>
+
+  </div>
+{% endblock content %}
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../../static/js/navbars.js"></script>
+</body>
+</html>

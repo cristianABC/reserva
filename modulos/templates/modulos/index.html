@@ -20,7 +20,7 @@
     <h3 class="subtitle">Catálogo de Especies</h3>
     <div class="hero-nav__button">
       {% if user.is_authenticated %}
-        <a class="button" href="">
+        <a class="button" onclick="openNav('editarSideNav')">
           <span class="text">{{ user.username }}</span>
           <span class="line -right"></span>
           <span class="line -top"></span>
@@ -81,6 +81,11 @@
 <div id="registroSideNav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <iframe src="./addUser/" frameborder="0"></iframe>
+</div>
+
+<div id="editarSideNav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <iframe src="./editUser/" frameborder="0"></iframe>
 </div>
 
 <div id="detailSideNav" class="sidenav">
