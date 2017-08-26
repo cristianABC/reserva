@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
@@ -70,5 +70,8 @@ def reload(request):
     context ={}
     return render(request, 'modulos/reload.html', context)
 
-def view_detail(request):
-        print(request.data)
+def view_detail(request, especie_id):
+
+    especie = Especie.objects.get(id=especie_id)
+    context ={'especie':especie}
+    return render(request,'modulos/detail.html', context)
