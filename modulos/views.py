@@ -9,7 +9,6 @@ from django.urls import reverse
 
 from .models import Especie
 from .models import UserForm
-from .models import EditUserForm
 from .models import Usuario
 # Create your views here.
 
@@ -78,14 +77,14 @@ def view_detail(request, especie_id):
     context ={'especie':especie}
     return render(request,'modulos/detail.html', context)
 
-def edit_request(request, usuario_id):
-    current_user = Usuario.objects.get(id=usuario_id)
+def edit_request(request):
+    current_user = User.objects.get(id=request.user.id)
     if request.method == 'POST':
-        form = EditUserForm(request.POST, instance=current_user)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('reload'))
+        User.objects.filter(username=request.user.username).update(first_name=request.POST.get('firstname'))
+        User.objects.filter(username=request.user.username).update(last_name=request.POST.get('lastname'))
+        User.objects.filter(username=request.user.username).update(email=request.POST.get('email'))
+
+        return HttpResponseRedirect(reverse('reload'))
     else:
-        form = EditUserForm(instance=current_user)
-        context = {'form': form}
+        context = {'current_user': current_user}
     return render(request, 'modulos/editar.html', context)
