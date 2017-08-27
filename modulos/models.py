@@ -12,7 +12,7 @@ from django.forms import ModelForm
 class Especie(models.Model):
     nombre = models.CharField(max_length=100)
     clasificacionTax = models.CharField(max_length=500)
-    nombreCientifico = models.CharField(max_length=100)
+    nombreCientifico = models.CharField(max_length=300)
     categoria = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=1000)
     url = models.CharField(max_length=1000)
