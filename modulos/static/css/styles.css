@@ -54,6 +54,12 @@
     right: -2vw;
 }
 
+.hero-nav__button.left{
+    position: fixed;
+    top: 7vh;
+    left: 6vw;
+}
+
 .hero-nav__button .button:first-child{
     margin-right: 1vw;
 }
