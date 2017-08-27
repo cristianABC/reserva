@@ -9,7 +9,12 @@
 <div class="content">
   <div class="title">{{ especie.nombre }} </div>
 {#  <div class="category">{{ especie.categoria }} </div>#}
+  {% if especie.imageFile == None%}
   <img class="image" src="{{ especie.url }}"/>
+  {%else%}
+  <img class="image" src="{{ especie.imageFile.url }}"/>
+  {%endif%}
+  
   <div class="name">{{ especie.nombreCientifico }} </div>
   <div class="description">{{ especie.descripcion }} </div>
 {#  <div class="classification">{{ especie.clasificacionTax }} </div>#}
