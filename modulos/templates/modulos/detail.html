@@ -8,7 +8,7 @@
 <body class="modal modal-detail">
 <div class="content">
   <div class="title">{{ especie.nombre }} </div>
-{#  <div class="category">{{ especie.categoria }} </div>#}
+  <div class="category">{{ especie.categoria }} </div>
   {% if especie.imageFile == None%}
   <img class="image" src="{{ especie.url }}"/>
   {%else%}
@@ -17,7 +17,7 @@
   
   <div class="name">{{ especie.nombreCientifico }} </div>
   <div class="description">{{ especie.descripcion }} </div>
-{#  <div class="classification">{{ especie.clasificacionTax }} </div>#}
+  <div class="classification">{{ especie.clasificacionTax }} </div>
 
   {#  <a href="{% url 'index' %}">Volver</a>#}
 </div>
