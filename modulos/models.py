@@ -16,7 +16,7 @@ class Especie(models.Model):
     categoria = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=1000)
     url = models.CharField(max_length=1000)
-
+    imageFile = models.ImageField(upload_to='static/img', null=True)
 
 class Categoria(models.Model):
     url = models.CharField(max_length=1000)
@@ -51,6 +51,11 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['username', 'firstname', 'lastname', 'email', 'password', 'password2']
 
+
+class EspecieForm(forms.ModelForm):
+    class Meta:
+        model = Especie
+        fields= ['nombre','clasificacionTax','nombreCientifico','categoria','descripcion','url','imageFile']
 
 def clean_username(self):
     username = self.cleaned_data['username']

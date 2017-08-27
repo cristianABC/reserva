@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
@@ -9,8 +10,12 @@ from django.urls import reverse
 
 from .models import Especie
 from .models import UserForm
+from .models import EspecieForm
 from .models import Usuario
 # Create your views here.
+
+
+
 
 
 def index(request):
@@ -88,3 +93,19 @@ def edit_request(request):
     else:
         context = {'current_user': current_user}
     return render(request, 'modulos/editar.html', context)
+
+def add_especie(request):
+    if request.method == 'POST':
+        form = EspecieForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect(reverse('index'))
+
+    else:
+        form = EspecieForm()
+
+    return render(request, 'modulos/especie_form.html',{'form':form})
+
+

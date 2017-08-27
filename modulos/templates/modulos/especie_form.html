@@ -1,0 +1,22 @@
+{#Load the tag library#}
+{% load bootstrap3 %}
+{%bootstrap_css%}
+{%bootstrap_javascript%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Especie</title>
+</head>
+{%block content%}
+<body>
+<form class="form-group" action="{%url 'addEspecie'%}" enctype="multipart/form-data" method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button class="btn btn-danger" type="submit" >Aceptar</button>
+
+      </form>
+</body>
+{%endblock content%}
+</html>
