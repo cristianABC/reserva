@@ -14,9 +14,10 @@
         {% csrf_token %}
         {{ form.as_p }}
         <br>
-        <button class="btn btn-danger" type="submit" >Aceptar</button>
+        <button class="btn btn-success" type="submit" >Aceptar</button>
 
-      </form>
+
+      </form><a href="{%url 'index'%}"class="btn btn-danger" >Cancelar</a>
 </body>
 {%endblock content%}
 </html>
