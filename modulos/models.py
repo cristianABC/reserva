@@ -24,11 +24,10 @@ class Categoria(models.Model):
     nombreEspecie = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=100)
 
-
-class Comentario(models.Model):
+class Comentario_especies(models.Model):
+    id_especie = models.CharField(max_length=50, unique=True, null=True)
     correo = models.CharField(max_length=100)
     comentario = models.CharField(max_length=100)
-
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)

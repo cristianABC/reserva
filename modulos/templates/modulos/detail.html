@@ -20,7 +20,20 @@
   <div class="description">{{ especie.descripcion }} </div>
   <div class="classification">{{ especie.clasificacionTax }} </div>
 
+  <form method="POST" action='addComentario' class="form-group">
+    {% csrf_token %}
+    <br>
+    Usuario <textarea type="text" name="correo" id="correo">{{user.username}}</textarea>
+    <br>
+    Comentario: <textarea type="text"id="comentario" name="comentario"></textarea>
+    <button type="submit">Comentar</button>
+  </form>
+
   {#  <a href="{% url 'index' %}">Volver</a>#}
 </div>
+
+
+
+
 </body>
 </html>

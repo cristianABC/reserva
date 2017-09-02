@@ -12,6 +12,7 @@ from .models import Especie
 from .models import UserForm
 from .models import EspecieForm
 from .models import Usuario
+from .models import Comentario_especies
 # Create your views here.
 
 
@@ -109,3 +110,12 @@ def add_especie(request):
     return render(request, 'modulos/especie_form.html',{'form':form})
 
 
+def add_comment(request, especie_id):
+
+    if request.method == 'POST':
+        email = request.POST.get('correo')
+        comment = request.POST.get('comentario')
+        commentObj = Comentario_especies(correo=email, comentario=comment, id_especie=especie_id)
+        commentObj.save()
+
+        return HttpResponseRedirect(reverse('reload'))

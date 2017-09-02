@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^reload/$', views.reload, name='reload'),
     url(r'^detalle/(?P<especie_id>\d+)/$', views.view_detail, name='detalle'),
     url(r'^editUser/$', views.edit_request, {}, name="editUser"),
-    url(r'^addEspecie/$', views.add_especie,name='addEspecie')
+    url(r'^addEspecie/$', views.add_especie,name='addEspecie'),
+    url(r'^detalle/(?P<especie_id>\d+)/addComentario', views.add_comment, name='addComentario')
 ]

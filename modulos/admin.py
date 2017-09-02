@@ -5,11 +5,11 @@ from django.contrib import admin
 from .models import Especie
 from .models import Categoria
 from .models import Usuario
-from .models import Comentario
+from .models import Comentario_especies
 
 # Register your models here.
 admin.site.register(Especie)
 admin.site.register(Usuario)
 admin.site.register(Categoria)
-admin.site.register(Comentario)
+admin.site.register(Comentario_especies)
 
