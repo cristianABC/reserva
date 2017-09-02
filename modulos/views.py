@@ -15,14 +15,16 @@ from .models import Usuario
 # Create your views here.
 
 
-
-
-
-def index(request):
+def index(request, categoria=''):
     # obtener lista de especies almacenados en la db
-    lista_especies= Especie.objects.all()
-    context ={'lista_especies': lista_especies}
-    return render(request, 'modulos/index.html', context)
+    if categoria != '':
+        lista_especies= Especie.objects.filter(categoria=categoria)
+        context = {'lista_especies': lista_especies}
+        return render(request, 'modulos/index.html', context)
+    else:
+        lista_especies= Especie.objects.all()
+        context = {'lista_especies': lista_especies}
+        return render(request, 'modulos/index.html', context)
 
 
 def add_user_view(request):
