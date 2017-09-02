@@ -20,7 +20,7 @@ from .models import Usuario
 
 def index(request):
     # obtener lista de especies almacenados en la db
-    lista_especies= Especie.objects.filter(categoria='Mamiferos')
+    lista_especies= Especie.objects.all()
     context ={'lista_especies': lista_especies}
     return render(request, 'modulos/index.html', context)
 
