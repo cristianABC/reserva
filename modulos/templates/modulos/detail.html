@@ -30,6 +30,7 @@
       <h2>No hay comentarios</h2>
     {%endif%}
 
+  {%if user.is_authenticated%}
   <form method="POST" action='addComentario' class="form-group">
     {% csrf_token %}
     <br>
@@ -37,7 +38,7 @@
     Comentario: <textarea type="text"id="comentario" name="comentario"></textarea>
     <button type="submit">Comentar</button>
   </form>
-
+  {%endif%}
 </div>
 
 
