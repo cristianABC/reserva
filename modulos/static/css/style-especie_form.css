@@ -3,3 +3,20 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+#nausuario
+{
+    border-color#ffffff;
+    border-top-style:solid;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    border-left-style:solid;
+    background-color:#000000;
+    border-top-width:5px;
+    border-right-width53px;
+    border-bottom-width:5px;
+    border-left-width:5px;
+    padding:20px;
+    color:#FFFFFF;
+}
+
