@@ -17,7 +17,7 @@ class Especie(models.Model):
     descripcion = models.CharField(max_length=1000)
     url = models.CharField(max_length=1000)
     imageFile = models.ImageField(upload_to='static/img', null=True)
-
+    comentario = models.CharField(max_length=100)
 class Categoria(models.Model):
     url = models.CharField(max_length=1000)
     nombre = models.CharField(max_length=100)

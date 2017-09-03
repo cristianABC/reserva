@@ -117,7 +117,8 @@ def add_especie(request):
 def add_comment(request, especie_id):
 
     if request.method == 'POST':
-        email = request.POST.get('correo')
+        Especie.objects.filter(id=especie_id).update(comentario=request.POST.get('comentario'))
+        email = request.POST.get('user')
         comment = request.POST.get('comentario')
         commentObj = Comentario_especies(correo=email, comentario=comment, id_especie=especie_id)
         commentObj.save()
