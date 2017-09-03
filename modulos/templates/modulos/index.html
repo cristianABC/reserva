@@ -56,6 +56,17 @@
         </a>
       </div>
     {% else %}
+      <div class="hero-nav__button left">
+        <div class="dropdown dropdown-dark" id="dropDownMenu">
+          <select name="dropdown" class="dropdown-select">
+            <option value="">Categoría...</option>
+            <option value="?categoria=Mamiferos">Mamiferos</option>
+            <option value="?categoria=Aves">Aves</option>
+            <option value="?categoria=Plantas">Plantas</option>
+            <option value="?categoria=Reptiles">Reptiles</option>
+          </select>
+        </div>
+      </div>
       <div class="hero-nav__button">
         <a class="button" onclick="openNav('loginSideNav')">
           <span class="text">Login</span>
