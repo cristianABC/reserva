@@ -16,14 +16,16 @@ from .models import Comentario_especies
 # Create your views here.
 
 
-def index(request, categoria=''):
+def index(request):
     # obtener lista de especies almacenados en la db
-    if categoria != '':
-        lista_especies= Especie.objects.filter(categoria=categoria)
+    categoria = request.GET.get('categoria')
+    print(categoria)
+    if categoria == None or categoria == '' :
+        lista_especies = Especie.objects.all()
         context = {'lista_especies': lista_especies}
         return render(request, 'modulos/index.html', context)
     else:
-        lista_especies= Especie.objects.all()
+        lista_especies = Especie.objects.filter(categoria=categoria)
         context = {'lista_especies': lista_especies}
         return render(request, 'modulos/index.html', context)
 
