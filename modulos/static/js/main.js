@@ -8,3 +8,7 @@ while (index < containers.length) {
     index = index2;
     rowIndex = rowIndex < nRows.length - 1 ? rowIndex + 1 : 0;
 }
+
+$('select[name="dropdown"]').change(function() {
+    window.location.replace($(this).val());
+});

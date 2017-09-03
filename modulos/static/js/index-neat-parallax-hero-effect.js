@@ -19,6 +19,7 @@ var heroShinker = function() {
             $('.icon-scroll-text').css('display','none');
             $('.hero-nav__inner .title').css('margin-bottom','0.67em');
             $('.hero-nav__inner .title').css('margin-top','0.67em');
+            // $('#dropDownMenu').css('display','inline-block');
         }
         if (scrollOffset > (heroHeight - 300)) {
             hero.addClass('fixme');
@@ -27,6 +28,7 @@ var heroShinker = function() {
         }
         else {
             hero.removeClass('fixme');
+            // $('#dropDownMenu').css('display','none');
         };
     });
 }

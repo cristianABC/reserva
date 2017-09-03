@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../static/css/style-mouse-scroll-animation.css">
   <link rel="stylesheet" href="../../static/css/style-button-animation.css">
   <link rel="stylesheet" href="../../static/css/style-navbars.css">
+  <link rel="stylesheet" href="../../static/css/style-dropdowMenu.css">
   <link rel="stylesheet" href="../../static/css/styles.css">
   {% csrf_token %}
 </head>
@@ -28,6 +29,15 @@
           <span class="line -left"></span>
           <span class="line -bottom"></span>
         </a>
+        <div class="dropdown dropdown-dark" id="dropDownMenu">
+          <select name="dropdown" class="dropdown-select">
+            <option value="">Categoría...</option>
+            <option value="?categoria=Mamiferos">Mamiferos</option>
+            <option value="?categoria=Aves">Aves</option>
+            <option value="?categoria=Plantas">Plantas</option>
+            <option value="?categoria=Reptiles">Reptiles</option>
+          </select>
+        </div>
       </div>
       <div class="hero-nav__button">
         <a class="button" onclick="openNav('editarSideNav')">
@@ -90,6 +100,7 @@
     {% endfor %}
   </div>
 </div>
+
 
 <div id="loginSideNav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
