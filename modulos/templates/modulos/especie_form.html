@@ -8,25 +8,33 @@
     <meta charset="UTF-8">
     <title>Agregar Especie</title>
     <style type="text/css">
-h1 {text-align: center}
-
-</style>
-
-{#    <link rel="stylesheet" href="../../static/css/styles.css">#}
-  <link rel="stylesheet" href="../../static/css/style-especie_form.css">
+        h1 {text-align: center}
+    </style>
+    <link rel="stylesheet" href="../../static/css/style-especie_form.css">
 </head>
 <body>
-<div class="hero-nav">
+<div>
 <h1 text-align="center"> Agregar Nueva Especie</h1>
 <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4" >
 
 {%block content%}
-        <form class="form-group" action="{%url 'addEspecie'%}" enctype="multipart/form-data" method="POST" >
-            {% csrf_token %}
-            {{ form.as_p }}
-            <br>
-            <button class="btn btn-success" type="submit" >Aceptar</button>
-        </form><a href="{%url 'index'%}"class="btn btn-danger" >Cancelar</a>
+    {% if user.is_authenticated %}
+        <div class="formulario">
+            <form class="form-group" action="{%url 'addEspecie'%}" enctype="multipart/form-data" method="POST" >
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <p><button class="btn btn-success" type="submit" >Aceptar</button>
+                <a href="{%url 'index'%}"class="btn btn-danger" >Cancelar</a></p>
+            </form>
+        </div>
+    {% else %}
+        <div id="nausuario">
+            <h3 class="subtitle">Este espacio es solo para usuarios autenticados</h3>
+            <h3 class="subtitle">Porfavor registrese y podra disfrutar de nuestros contenidos</h3>
+            <a  class="boton" href="{% url 'index' %}">Volver</a>
+        </div>
+    {% endif %}
 {%endblock content%}
 </div>
 </div>

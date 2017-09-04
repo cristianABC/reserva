@@ -3,3 +3,76 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+#nausuario
+{
+    border-top-style:solid;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    border-left-style:solid;
+    background-color:#000000;
+    border-top-width:5px;
+    border-right-width:5px;
+    border-bottom-width:5px;
+    border-left-width:5px;
+    padding:20px;
+    color:#FFFFFF;
+}
+
+.boton
+{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: #808080;
+    border-radius: 30px;
+    border: 0;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    height: 2.85em;
+    line-height: 2.95em;
+    padding: 0 2em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.boton:hover
+{
+    background-color:#414141;
+    text-decoration:none;
+}
+
+.formulario
+{
+    border-top-style:solid;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    border-left-style:solid;
+    background-color:#000000;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    color:#FFFFFF;
+    padding:10%;
+    width:100%;
+}
+
+.formulario label
+{
+    width:150px;
+    text-align:left;
+}
+
+.formulario p
+{
+    text-align:center;
+}
