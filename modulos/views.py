@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -124,3 +125,20 @@ def add_comment(request, especie_id):
         commentObj.save()
 
         return HttpResponseRedirect(reverse('reload'))
+## REST SERVICES
+def get_all_species(request):
+    lista_especies = Especie.objects.all()
+    context = {'lista_especies': lista_especies}
+    return HttpResponse(serializers.serialize("json", lista_especies));
+
+def search_specie(response,especie_id):
+    lista_especies = Especie.objects.filter(id=especie_id)
+    context = {'lista_especies': lista_especies}
+    return HttpResponse(serializers.serialize("json", lista_especies));
+
+def search_type(response,categoria):
+    lista_especies = Especie.objects.filter(categoria=categoria)
+    context = {'lista_especies': lista_especies}
+    return HttpResponse(serializers.serialize("json", lista_especies));
+
+
