@@ -95,22 +95,7 @@
 
 <div class="page-content">
   <div class="container">
-    {% for especie in lista_especies %}
-      <div class="col">
-        {% if especie.imageFile == None %}
-          <div class="photo-container"
-               style="background-image:url({{ especie.url }})"></div>
-        {% else %}
-          <div class="photo-container"
-               style="background-image:url({{ especie.imageFile.url }})"></div>
-        {% endif %}
-        <h2 id="nombre">{{ especie.nombre }}</h2>
-        <div class="slide">
-          <div class="description">{{ especie.descripcion }}</div>
-          <div class="detail" onclick="openNav('detailSideNav',{{ especie.id }})">Ver más</div>
-        </div>
-      </div>
-    {% endfor %}
+
   </div>
 </div>
 

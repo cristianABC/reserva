@@ -1,14 +1,56 @@
-const containers = $('.col');
-const nRows = [4, 2, 3, 5];
-let index = 0;
-let rowIndex = 0;
-while (index < containers.length) {
-    const index2 = containers.length >= index + nRows[rowIndex] ? index + nRows[rowIndex] : containers.length;
-    containers.slice(index, index2).wrapAll( "<div class='row' />");
-    index = index2;
-    rowIndex = rowIndex < nRows.length - 1 ? rowIndex + 1 : 0;
-}
+(() => {
+    $.getJSON('./rest/all/').done((data) => {
+        const parent = $('.container');
+        const nRows = [4, 2, 3, 5];
+        let index = 0;
+        let rowIndex = 0;
+        while (index < data.length) {
+            const index2 = data.length >= index + nRows[rowIndex] ? index + nRows[rowIndex] : data.length;
+            let elements = '<div class="row">';
+            data.slice(index, index2).map((item, index) => {
+                const id = item.pk;
+                const {categoria, clasificacionTax, comentario, descripcion, imageFile, nombre, nombreCientifico, url} = item.fields;
+                const imageUrl = imageFile ? imageFile.url : url;
+                const element = `
+                  <div class ="col">
+                    <div class="photo-container" style="background-image: url(${imageUrl})"></div>
+                    <h2 id="nombre">${nombre}</h2>
+                    <div class="slide">
+                        <div class="description">${descripcion}</div>
+                        <div class="detail" onclick="openNav('detailSideNav',${id})">Ver más</div>
+                    </div> 
+                  </div>
+                   `;
+                elements += element;
+            });
+            elements+='</div>';
+            parent.append(elements);
+            console.log(elements);
 
-$('select[name="dropdown"]').change(function() {
+            index = index2;
+            rowIndex = rowIndex < nRows.length - 1 ? rowIndex + 1 : 0;
+        }
+
+
+        // data.forEach((item, index) => {
+        //     const id = item.pk;
+        //     const {categoria, clasificacionTax, comentario, descripcion, imageFile, nombre, nombreCientifico, url} = item.fields;
+        //     const imageUrl = imageFile ? imageFile.url : url;
+        //     const element = `
+        //   <div class ="col">
+        //     <div class="photo-container" style="background-image: url(${imageUrl})"></div>
+        //     <h2 id="nombre">${nombre}</h2>
+        //     <div class="slide">
+        //         <div class="description">${descripcion}</div>
+        //         <div class="detail" onclick="openNav('detailSideNav',${id})">Ver más</div>
+        //     </div>
+        //   </div>
+        //    `;
+        //
+        // })
+    })
+})();
+
+$('select[name="dropdown"]').change(function () {
     window.location.replace($(this).val());
 });
