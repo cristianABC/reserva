@@ -163,7 +163,7 @@ def correo(request):
             remite = 'biodiversidadweb@gmail.com'
             send_mail(
                 asunto,
-                'Recibiste un mensaje a travez de http://reservanatural.herokuapp.com/modulos/ \n \n '+comentario,
+                'Recibiste un mensaje a través de http://reservanatural.herokuapp.com/modulos/ \n \n '+comentario,
                 remite,
                 [correo],
                 fail_silently=False,
