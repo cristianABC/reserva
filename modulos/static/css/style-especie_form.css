@@ -61,15 +61,16 @@ body{
     background-color:#000000;
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
-    color:#FFFFFF;
     padding:10%;
     width:100%;
+    border-color:#FFFFFF;
 }
 
 .formulario label
 {
     width:150px;
     text-align:left;
+    color:#FFFFFF;
 }
 
 .formulario p

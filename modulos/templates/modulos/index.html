@@ -42,6 +42,13 @@
         </div>
       </div>
       <div class="hero-nav__button">
+        <a class="button" href="{% url 'envcorreo' %}">
+          <span class="text">Dile a tus amigos</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
         <a class="button" onclick="openNav('editarSideNav')">
           <span class="text">{{ user.username }}</span>
           <span class="line -right"></span>
@@ -129,4 +136,3 @@
 </body>
 
 </html>
-

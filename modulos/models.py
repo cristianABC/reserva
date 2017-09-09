@@ -77,3 +77,11 @@ def clean_username(self):
         raise forms.ValidationError('Las contraseñas no coincidenNombre de usuario ya existe')
     return password
 
+
+class correoform(forms.ModelForm):
+    correo = forms.EmailField()
+    mensaje = forms.Textarea()
+
+    class Meta:
+        model = Comentario_especies
+        fields = ['correo', 'comentario']

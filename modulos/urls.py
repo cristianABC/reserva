@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^rest/all/$', views.get_all_species, name='rest/all'),
     url(r'^rest/(?P<especie_id>\d+)/', views.search_specie, name='rest/search'),
     url(r'^rest/(?P<categoria>\w+)/', views.search_type, name='rest/searchType'),
+    url(r'^envcorreo/$', views.correo, name='envcorreo')
 
 ]

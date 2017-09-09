@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'zd*(5aab%*fo)dd=-ezpunt(9%x_py7jmvp49c)a3q7)e@i@^v'
 DEBUG = True
 
 ALLOWED_HOSTS = ['reservanatural.herokuapp.com', '127.0.0.1', 'localhost']
-
 
 # Application definition
 
@@ -71,7 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'reserva.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -79,13 +76,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd1i8d4ui92jek7',
-        'USER':'zrslugalihjosd',
-        'PASSWORD':'1d1408d64d48abb1d6e608075aad79bc1c315c000d0dd568a2095b62769bac68',
-        'HOST':'ec2-54-163-246-154.compute-1.amazonaws.com',
-        'PORT':'5432',
+        'USER': 'zrslugalihjosd',
+        'PASSWORD': '1d1408d64d48abb1d6e608075aad79bc1c315c000d0dd568a2095b62769bac68',
+        'HOST': 'ec2-54-163-246-154.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -105,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -119,12 +114,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT =( os.path.join(BASE_DIR,'static'))
+STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
 STATIC_URL = '/static/'
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'reserva/media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'reserva/media/')
+
+# variables de entorno para envio de correo
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'biodiversidadweb@gmail.com'
+EMAIL_HOST_PASSWORD = 'biodiversidad123'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'biodiversidadweb@gmail.com'
