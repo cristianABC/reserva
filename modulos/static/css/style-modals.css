@@ -1,6 +1,6 @@
 /*Modals content*/
-body{
-    overflow-y: hidden;
+body.modal{
+    /*overflow-y: hidden;*/
 }
 .modal {
     background-color: #111;
@@ -131,7 +131,7 @@ body{
     margin-bottom: 10px;
 }
 
-::-webkit-scrollbar
+.modal::-webkit-scrollbar
 {
     width: 0;
 }

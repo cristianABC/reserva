@@ -25,7 +25,7 @@
             });
             elements+='</div>';
             parent.append(elements);
-            console.log(elements);
+
 
             index = index2;
             rowIndex = rowIndex < nRows.length - 1 ? rowIndex + 1 : 0;
