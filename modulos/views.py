@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core import serializers
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -145,6 +145,16 @@ def search_specie(response, especie_id):
     context = {'lista_especies': lista_especies}
     return HttpResponse(serializers.serialize("json", lista_especies))
 
+@csrf_exempt
+def islogged_view(request):
+
+    mensaje = 'no'
+
+    if request.user.is_authenticated:
+        mensaje = 'si'
+
+    return JsonResponse({"mensaje": mensaje})
+
 
 @csrf_exempt
 def search_type(response, categoria):
@@ -172,3 +182,4 @@ def correo(request):
     else:
         form = correoform()
     return render(request, 'modulos/correo.html', {'form': form, })
+

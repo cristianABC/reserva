@@ -19,6 +19,20 @@ function openNav(idModal, idSpecie) {
             const clasificacionTax = data[0].fields.imageFile;
             const imageUrl = imageFile ? imageFile.url : url;
 
+            $.getJSON('./isLogged/').done( function ( data ) {
+
+                console.log(data.mensaje);
+
+                if (data.mensaje == "no")
+                {
+                    $("#comentario").hide();
+                }
+                else
+                {
+                    $("#comentario").show();
+                }
+            });
+
             //Se crea el elemento que se agregará al index.html y se agrega la información de la especie
             const element = `
             <div class="modal modal-detail">
@@ -30,9 +44,10 @@ function openNav(idModal, idSpecie) {
                     <div class="description">${descripcion} </div>
                     <div class="classification">${clasificacionTax} </div>
                     <div class="Comentarios">${comentario ? comentario : "No hay comentarios"} </div>
-                    <br>
-                    Comentario: <textarea type="text"id="comentario" name="comentario"></textarea>
-                                <button type="submit">Comentar</button>
+                    <form method="POST" action='addComentario' class="form-group" id="comentario">
+                        Comentario: <textarea type="text"id="comentario" name="comentario"></textarea>
+                     <button type="submit">Comentar</button>
+                    </form>
                 </div>
             </div>
             `
@@ -45,22 +60,6 @@ function openNav(idModal, idSpecie) {
     else {
         modal.css('width', '30vw');
     }
-}
-
-function checkAuth() {
-    var logged = (function() {
-        var isLogged = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': '/user/isLogged/',
-            'success': function(resp) {
-                isLogged = (resp === "1");
-            }
-        });
-        return isLogged;
-    })();
-    return logged;
 }
 
 function closeNav() {
