@@ -1,4 +1,5 @@
 function openNav(idModal, idSpecie) {
+
     // document.getElementById("loginSideNav").style.width = "30vw";
     let modal = $('#' + idModal);
     if (idSpecie || idSpecie === 0) {
@@ -9,14 +10,31 @@ function openNav(idModal, idSpecie) {
 
             //Se extrae la información de la especie
             const nombre = data[0].fields.nombre;
+            const comentario = data[0].fields.comentario;
+            const descripcion = data[0].fields.descripcion;
+            const nombreCientifico = data[0].fields.nombreCientifico;
+            const url = data[0].fields.url;
+            const categoria = data[0].fields.categoria;
+            const imageFile = data[0].fields.imageFile;
+            const clasificacionTax = data[0].fields.imageFile;
+            const imageUrl = imageFile ? imageFile.url : url;
 
             //Se crea el elemento que se agregará al index.html y se agrega la información de la especie
             const element = `
             <div class="modal modal-detail">
                 <div class="content">
-                  <div class="title">${nombre}</div>
+                    <div class="title">${nombre}</div>
+                    <div class="category">${categoria}</div>
+                    <img class="image" src="${imageUrl}"/>
+                    <div class="name">${nombreCientifico} </div>
+                    <div class="description">${descripcion} </div>
+                    <div class="classification">${clasificacionTax} </div>
+                    <div class="Comentarios">${comentario ? comentario : "No hay comentarios"} </div>
+                    <br>
+                    Comentario: <textarea type="text"id="comentario" name="comentario"></textarea>
+                                <button type="submit">Comentar</button>
                 </div>
-              </div>
+            </div>
             `
             //Se agrega el elemento
             modal.append(element);
@@ -27,6 +45,22 @@ function openNav(idModal, idSpecie) {
     else {
         modal.css('width', '30vw');
     }
+}
+
+function checkAuth() {
+    var logged = (function() {
+        var isLogged = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': '/user/isLogged/',
+            'success': function(resp) {
+                isLogged = (resp === "1");
+            }
+        });
+        return isLogged;
+    })();
+    return logged;
 }
 
 function closeNav() {
