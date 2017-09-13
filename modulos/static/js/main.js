@@ -1,6 +1,9 @@
-(() => {
-    $.getJSON('./rest/all/').done((data) => {
+let url='./rest/all/';
+function mountData(){
+    $.getJSON(url).done((data) => {
+        console.log(url);
         const parent = $('.container');
+        parent.children('.row').remove();
         const nRows = [4, 2, 3, 5];
         let index = 0;
         let rowIndex = 0;
@@ -49,8 +52,10 @@
         //
         // })
     })
-})();
+}
+mountData();
 
 $('select[name="dropdown"]').change(function () {
-    window.location.replace($(this).val());
+    url = './rest/'+$(this).val();
+    mountData();
 });
